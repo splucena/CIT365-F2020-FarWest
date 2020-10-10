@@ -1,1 +1,2 @@
 Slack - Github integration
+Salack - Github integration github-notification channel
