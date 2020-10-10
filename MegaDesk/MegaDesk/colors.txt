@@ -1,0 +1,5 @@
+﻿#4056A1 Blue
+#C5CBE3 LightBlue
+#F13C20 Red
+#EFE2BA LightBrown
+#D79922 Gold
