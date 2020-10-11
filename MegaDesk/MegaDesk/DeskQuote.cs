@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace MegaDesk
 {
@@ -148,6 +149,58 @@ namespace MegaDesk
             return totalDeskSizeCost + totalDrawerAmount + surfaceMaterialCost + shippingCost;
 
         }
+        //The following function creates the .json file in the /bin folder
+        public void saveDeskQuoteJS (DeskQuote dq)
+        {
+            //Create the new object that uses public variables in order to access information to create the json file.
+            PublicDesk deskJs = new PublicDesk();
+
+            //populating all the public class variables
+            deskJs._pCustomerName = dq._customerName;
+            deskJs._pDateCreated = dq._shippingDate;
+            deskJs._pWidth = dq._desk.Width;
+            deskJs._pDepth = dq._desk.Depth;
+            deskJs._pTotalSurfaceArea = $"{Math.Round(computeSurfaceArea(deskJs._pWidth, deskJs._pDepth), 2)}";
+            deskJs._pSizeCost = Math.Round(computeDeskSizeCost(), 2).ToString("F");
+            deskJs._pDrawerCost = Math.Round(computeDrawerCost(), 2).ToString("F");
+            deskJs._pMaterial = dq._desk.SurfaceMaterial; ;
+            deskJs._pMaterialCost = Math.Round(computeSurfaceMaterialCost(), 2).ToString("F");
+            string shippingMethod = null;
+            deskJs._pRushOptionDays = dq._desk.RushOrderDay;
+            if (deskJs._pRushOptionDays != 14)
+            {
+                shippingMethod = $"Rush - {deskJs._pRushOptionDays} Days";
+            }
+            else
+            {
+                shippingMethod = $"Normal - {deskJs._pRushOptionDays} Days";
+            }
+            deskJs._pShippingCost = Math.Round(computeShippingCost(), 2).ToString("F");
+            deskJs._pTotalCost = Math.Round(computeDeskPrice(), 2).ToString("F");
+
+            //This variable is actually the string written in a json format
+            string json = JsonConvert.SerializeObject(deskJs);
+
+            //the following creates the json file. 
+            string path = @"qoutesJs.json";
+            // This text is added only once to the file
+            if (!File.Exists(path))
+            {
+                // Create a file to write to.
+                using (StreamWriter sw = File.CreateText(path))
+                {
+
+                    sw.WriteLine(json);
+                }
+            }
+            else 
+            // This text is always added, making file longer over time
+            // if not deleted
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                sw.WriteLine(json);
+            }
+        }
 
         public void saveDeskQuote(DeskQuote dq)
         {
@@ -215,7 +268,7 @@ namespace MegaDesk
             using (StreamWriter sw = File.AppendText(path))
             {
                 sw.WriteLine(deskQuote);
-            }
+            } 
         } 
 
         public void displayDeskQuotes()

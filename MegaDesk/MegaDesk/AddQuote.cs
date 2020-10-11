@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace MegaDesk
 
@@ -108,6 +109,7 @@ namespace MegaDesk
                 }
                 // Create DeskQuote
                 DeskQuote dq = new DeskQuote(d, Convert.ToDateTime(dtDateCreated.Value), txtName.Text);
+                dq.saveDeskQuoteJS(dq);
                 dq.saveDeskQuote(dq);
                 dq.displayDeskQuotes();
 
