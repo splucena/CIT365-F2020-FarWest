@@ -61,6 +61,23 @@ namespace MegaDesk.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 60
+        ///70
+        ///80
+        ///40
+        ///50
+        ///60
+        ///30
+        ///35
+        ///40.
+        /// </summary>
+        internal static string rushOrderPrices {
+            get {
+                return ResourceManager.GetString("rushOrderPrices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap workplace {

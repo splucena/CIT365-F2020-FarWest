@@ -155,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="colors.txt" />
+    <None Include="Resources\rushOrderPrices.txt" />
     <None Include="Resources\workplace.png" />
     <None Include="Resources\workspace.png" />
   </ItemGroup>

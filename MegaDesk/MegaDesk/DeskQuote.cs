@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using MegaDesk.Properties;
 using Newtonsoft.Json;
 
 namespace MegaDesk
@@ -30,61 +31,60 @@ namespace MegaDesk
             return width * height;
         }
 
+        public int[,] getRushOrderPrices()
+        {
+            int[,] rushOrderPrices = new int[8, 3];
+            string[] stringSeparators = new string[] { "\r\n" };
+            string[] lines = Resources.rushOrderPrices.Split(stringSeparators, StringSplitOptions.None);
+            int k = 0;
+            try
+            {
+                foreach (string line in lines)
+                {
+                    for (int i = 3; i <= 7; i += 2)
+                    {
+                        for (int j = 0; j < 3; j++, k++)
+                        {
+                            rushOrderPrices[i, j] = Int32.Parse(lines[k]);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Something went wrong getting the rush order prices. Try again later.");
+                Console.WriteLine(e.Message);
+            }
+            return rushOrderPrices;
+        }
+
         public decimal computeShippingCost()
         {
             
             decimal totalSurfaceArea = computeSurfaceArea(_desk.Width, _desk.Depth);
-            decimal rushOrderCost;
-            if (_desk.RushOrderDay == 3)
+            int rushOrderCost;
+            int[,] rushOrderPrices = getRushOrderPrices();
+            int costFactor;
+            if (_desk.RushOrderDay == 3 || _desk.RushOrderDay == 5 || _desk.RushOrderDay == 7)
             {
                 if (totalSurfaceArea < 1000)
                 {
-                    rushOrderCost = 60;
+                    costFactor = 0;
                 }
                 else if (totalSurfaceArea >= 100 && totalSurfaceArea <= 2000)
                 {
-                    rushOrderCost = 70;
+                    costFactor = 1;
                 }
                 else
                 {
-                    rushOrderCost = 80;
+                    costFactor = 2;
                 }
-            }
-            else if (_desk.RushOrderDay == 5)
-            {
-                if (totalSurfaceArea < 1000)
-                {
-                    rushOrderCost = 40;
-                }
-                else if (totalSurfaceArea >= 100 && totalSurfaceArea <= 2000)
-                {
-                    rushOrderCost = 50;
-                }
-                else
-                {
-                    rushOrderCost = 60;
-                }
-            }
-            else if (_desk.RushOrderDay == 7)
-            {
-                if (totalSurfaceArea < 1000)
-                {
-                    rushOrderCost = 30;
-                }
-                else if (totalSurfaceArea >= 100 && totalSurfaceArea <= 2000)
-                {
-                    rushOrderCost = 35;
-                }
-                else
-                {
-                    rushOrderCost = 40;
-                }
+                rushOrderCost = rushOrderPrices[_desk.RushOrderDay, costFactor];
             }
             else
             {
                 rushOrderCost = 0;
             }
-
             return rushOrderCost;
         }
 
