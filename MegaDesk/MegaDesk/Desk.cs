@@ -1,4 +1,5 @@
 ﻿using Microsoft.SqlServer.Server;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +20,17 @@ namespace MegaDesk
     }
     class Desk
     {
+        [JsonProperty]
         private decimal _width;
+        [JsonProperty]
         private decimal _depth;
+        [JsonProperty]
         private int _numberOfDrawer;
+        [JsonProperty]
         private string _surfaceMaterial;
+        [JsonProperty]
         private int _rushOrderDay;
+        [JsonProperty]
         public const decimal MIN_DESK_WIDTH = 24;
         public const decimal MAX_DESK_WIDTH = 96;
         public const decimal MIN_DESK_DEPTH = 12;

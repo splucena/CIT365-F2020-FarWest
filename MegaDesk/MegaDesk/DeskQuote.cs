@@ -8,13 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using MegaDesk.Properties;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace MegaDesk
 {
     class DeskQuote
     {
+        [JsonProperty]
         private Desk _desk;
+        [JsonProperty]
         private DateTime _shippingDate;
+        [JsonProperty]
         private String _customerName;
 
         private List<DeskQuote> _dq;
@@ -152,6 +156,45 @@ namespace MegaDesk
         //The following function creates the .json file in the /bin folder
         public void saveDeskQuoteJS (DeskQuote dq)
         {
+
+            // Declare path that will store the json data.
+            string jsonPath = @"quotes.json";
+
+            if (!File.Exists(jsonPath))
+            {
+                // Initialize a list that will hold the desk quotations.
+                List<DeskQuote> serializedDeskQuote = new List<DeskQuote>();
+                serializedDeskQuote.Add(dq);
+
+                JsonSerializer serializer = new JsonSerializer();
+                using (StreamWriter sw = new StreamWriter(jsonPath))
+                using (JsonWriter writer = new JsonTextWriter(sw))
+                {
+                    // Serialize then write list to file.
+                    serializer.Serialize(writer, serializedDeskQuote);
+                }
+
+            } else
+            {
+                // Read data from json.
+                var jsonData = File.ReadAllText(jsonPath);
+                // Deserialize json and then save it to a list
+                List<DeskQuote> deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(jsonData, new JsonSerializerSettings
+                {
+                    DateFormatString = "MM/dd/YYYY HH:mm:ss"
+                });
+                // Append new desk quotation to list.
+                deskQuotes.Add(dq);
+
+                JsonSerializer serializer = new JsonSerializer();
+                using (StreamWriter sw = new StreamWriter(jsonPath))
+                using (JsonWriter writer = new JsonTextWriter(sw))
+                {
+                    // Serialize then write list to file.
+                    serializer.Serialize(writer, deskQuotes);
+                }
+            }
+
             //Create the new object that uses public variables in order to access information to create the json file.
             PublicDesk deskJs = new PublicDesk();
 
@@ -200,6 +243,7 @@ namespace MegaDesk
             {
                 sw.WriteLine(json);
             }
+
         }
 
         public void saveDeskQuote(DeskQuote dq)
@@ -277,6 +321,14 @@ namespace MegaDesk
             {
                 Console.WriteLine($"Customer Name: {dq._customerName}, Shipping Date: {dq._shippingDate}, Total Desk Price: {computeDeskPrice()}");
             }
+        }
+
+        public override string ToString()
+        {
+            string deskQuote = null;
+            deskQuote += $"Name: {_customerName} Width: {_desk.Width}";
+            return deskQuote;
+            //return base.ToString();
         }
     }
 }
