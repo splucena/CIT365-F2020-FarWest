@@ -78,9 +78,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.dgvQuotes = new System.Windows.Forms.DataGridView();
+            this.dgvColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnShippingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnShippingMethod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpQuote.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuotes)).BeginInit();
             this.SuspendLayout();
             // 
             // lvQuotes
@@ -744,12 +749,43 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // dgvQuotes
+            // 
+            this.dgvQuotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQuotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvColumnName,
+            this.dgvColumnShippingDate,
+            this.dgvColumnShippingMethod});
+            this.dgvQuotes.Location = new System.Drawing.Point(20, 515);
+            this.dgvQuotes.Name = "dgvQuotes";
+            this.dgvQuotes.Size = new System.Drawing.Size(561, 150);
+            this.dgvQuotes.TabIndex = 10;
+            // 
+            // dgvColumnName
+            // 
+            this.dgvColumnName.HeaderText = "Name";
+            this.dgvColumnName.Name = "dgvColumnName";
+            this.dgvColumnName.ReadOnly = true;
+            // 
+            // dgvColumnShippingDate
+            // 
+            this.dgvColumnShippingDate.HeaderText = "Shipping Date";
+            this.dgvColumnShippingDate.Name = "dgvColumnShippingDate";
+            this.dgvColumnShippingDate.ReadOnly = true;
+            // 
+            // dgvColumnShippingMethod
+            // 
+            this.dgvColumnShippingMethod.HeaderText = "Shipping Method";
+            this.dgvColumnShippingMethod.Name = "dgvColumnShippingMethod";
+            this.dgvColumnShippingMethod.ReadOnly = true;
+            // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(872, 550);
+            this.ClientSize = new System.Drawing.Size(872, 796);
+            this.Controls.Add(this.dgvQuotes);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -764,6 +800,7 @@
             this.tlpQuote.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuotes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -821,5 +858,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.DataGridView dgvQuotes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnShippingDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnShippingMethod;
     }
 }

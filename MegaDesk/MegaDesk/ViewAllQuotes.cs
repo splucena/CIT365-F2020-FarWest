@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,6 +44,45 @@ namespace MegaDesk
             {
                 ch.Width = -2;
             }
+
+            // Read data from json file.
+            string jsonPath = @"quotes.json";
+
+            if (!File.Exists(jsonPath))
+            {
+                MessageBox.Show("Information", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else
+            {
+                // Read data from json.
+                var jsonData = File.ReadAllText(jsonPath);
+                // Deserialize json and then save it to a list
+                List<DeskQuote> deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(jsonData, new JsonSerializerSettings
+                {
+                    DateFormatString = "MM/dd/YYYY HH:mm:ss"
+                });
+
+                //dgvQuotes.Columns[0].Name = "Name";
+                //dgvQuotes.Columns[1].Name = "Shipping Date";
+
+                // Populate datagrid
+                foreach(DeskQuote dq in deskQuotes)
+                {
+                    int shippingDays = dq.Desk.RushOrderDay;
+                    string shippingMethod = "";
+                    if (shippingDays != 14)
+                    {
+                        shippingMethod = $"Rush - {shippingDays} days.";
+                    } else
+                    {
+                        shippingMethod = $"Normal - {shippingDays} days.";
+                    }
+
+                    string[] row = { dq.CustomerName, dq.ShippingDate.ToString(), shippingMethod };
+                    dgvQuotes.Rows.Add(row);
+                }
+            }
+
+
         }
 
         private void lvQuotes_SelectedIndexChanged(object sender, EventArgs e)

@@ -23,6 +23,10 @@ namespace MegaDesk
 
         private List<DeskQuote> _dq;
 
+        public string CustomerName { get => _customerName; set => _customerName = value; }
+        public DateTime ShippingDate { get => _shippingDate; set => _shippingDate = value; }
+        internal Desk Desk { get => _desk; set => _desk = value; }
+
         public DeskQuote(Desk desk, DateTime shippingDate, String customerName)
         {
             _desk = desk;
