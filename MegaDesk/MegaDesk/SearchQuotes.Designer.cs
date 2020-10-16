@@ -29,26 +29,27 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lvQuotes = new System.Windows.Forms.ListView();
-            this.customerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateCreated = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.surfaceArea = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sizeCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.drawerCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.material = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.shippingMethod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.shippingCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.totalCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbSurfaceMaterial = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.dgvQuotes = new System.Windows.Forms.DataGridView();
+            this.dgvColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnShippingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnShippingMethod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnTotalSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnSizeCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnDrawerCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnMaterialCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnShippingCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnTotalCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuotes)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lvQuotes);
+            this.groupBox1.Controls.Add(this.dgvQuotes);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 46);
             this.groupBox1.Name = "groupBox1";
@@ -57,69 +58,6 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Desk Quotes";
-            // 
-            // lvQuotes
-            // 
-            this.lvQuotes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.customerName,
-            this.dateCreated,
-            this.surfaceArea,
-            this.sizeCost,
-            this.drawerCost,
-            this.material,
-            this.materialCost,
-            this.shippingMethod,
-            this.shippingCost,
-            this.totalCost});
-            this.lvQuotes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvQuotes.FullRowSelect = true;
-            this.lvQuotes.GridLines = true;
-            this.lvQuotes.HideSelection = false;
-            this.lvQuotes.Location = new System.Drawing.Point(8, 24);
-            this.lvQuotes.Name = "lvQuotes";
-            this.lvQuotes.Size = new System.Drawing.Size(635, 438);
-            this.lvQuotes.TabIndex = 0;
-            this.lvQuotes.UseCompatibleStateImageBehavior = false;
-            // 
-            // customerName
-            // 
-            this.customerName.Text = "Customer Name";
-            // 
-            // dateCreated
-            // 
-            this.dateCreated.Text = "Date Created";
-            // 
-            // surfaceArea
-            // 
-            this.surfaceArea.Text = "Surface Area";
-            // 
-            // sizeCost
-            // 
-            this.sizeCost.Text = "Size Cost";
-            // 
-            // drawerCost
-            // 
-            this.drawerCost.Text = "Drawer Cost";
-            // 
-            // material
-            // 
-            this.material.Text = "Material";
-            // 
-            // materialCost
-            // 
-            this.materialCost.Text = "Material Cost";
-            // 
-            // shippingMethod
-            // 
-            this.shippingMethod.Text = "Shipping Method";
-            // 
-            // shippingCost
-            // 
-            this.shippingCost.Text = "Shipping Cost";
-            // 
-            // totalCost
-            // 
-            this.totalCost.Text = "Total Cost";
             // 
             // cbSurfaceMaterial
             // 
@@ -167,12 +105,92 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // dgvQuotes
+            // 
+            this.dgvQuotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQuotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvColumnName,
+            this.dgvColumnShippingDate,
+            this.dgvColumnShippingMethod,
+            this.dgvColumnTotalSize,
+            this.dgvColumnSizeCost,
+            this.dgvColumnDrawerCost,
+            this.dgvColumnMaterial,
+            this.dgvColumnMaterialCost,
+            this.dgvColumnShippingCost,
+            this.dgvColumnTotalCost});
+            this.dgvQuotes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvQuotes.Location = new System.Drawing.Point(8, 24);
+            this.dgvQuotes.Name = "dgvQuotes";
+            this.dgvQuotes.Size = new System.Drawing.Size(635, 438);
+            this.dgvQuotes.TabIndex = 25;
+            // 
+            // dgvColumnName
+            // 
+            this.dgvColumnName.HeaderText = "Name";
+            this.dgvColumnName.Name = "dgvColumnName";
+            this.dgvColumnName.ReadOnly = true;
+            // 
+            // dgvColumnShippingDate
+            // 
+            this.dgvColumnShippingDate.HeaderText = "Shipping Date";
+            this.dgvColumnShippingDate.Name = "dgvColumnShippingDate";
+            this.dgvColumnShippingDate.ReadOnly = true;
+            // 
+            // dgvColumnShippingMethod
+            // 
+            this.dgvColumnShippingMethod.HeaderText = "Shipping Method";
+            this.dgvColumnShippingMethod.Name = "dgvColumnShippingMethod";
+            this.dgvColumnShippingMethod.ReadOnly = true;
+            // 
+            // dgvColumnTotalSize
+            // 
+            this.dgvColumnTotalSize.HeaderText = "Total Size";
+            this.dgvColumnTotalSize.Name = "dgvColumnTotalSize";
+            this.dgvColumnTotalSize.ReadOnly = true;
+            // 
+            // dgvColumnSizeCost
+            // 
+            this.dgvColumnSizeCost.HeaderText = "Size Cost";
+            this.dgvColumnSizeCost.Name = "dgvColumnSizeCost";
+            this.dgvColumnSizeCost.ReadOnly = true;
+            // 
+            // dgvColumnDrawerCost
+            // 
+            this.dgvColumnDrawerCost.HeaderText = "Drawer Cost";
+            this.dgvColumnDrawerCost.Name = "dgvColumnDrawerCost";
+            this.dgvColumnDrawerCost.ReadOnly = true;
+            // 
+            // dgvColumnMaterial
+            // 
+            this.dgvColumnMaterial.HeaderText = "Material";
+            this.dgvColumnMaterial.Name = "dgvColumnMaterial";
+            this.dgvColumnMaterial.ReadOnly = true;
+            // 
+            // dgvColumnMaterialCost
+            // 
+            this.dgvColumnMaterialCost.HeaderText = "Material Cost";
+            this.dgvColumnMaterialCost.Name = "dgvColumnMaterialCost";
+            this.dgvColumnMaterialCost.ReadOnly = true;
+            // 
+            // dgvColumnShippingCost
+            // 
+            this.dgvColumnShippingCost.HeaderText = "ShippingCost";
+            this.dgvColumnShippingCost.Name = "dgvColumnShippingCost";
+            this.dgvColumnShippingCost.ReadOnly = true;
+            // 
+            // dgvColumnTotalCost
+            // 
+            this.dgvColumnTotalCost.HeaderText = "Total Cost";
+            this.dgvColumnTotalCost.Name = "dgvColumnTotalCost";
+            this.dgvColumnTotalCost.ReadOnly = true;
+            // 
             // SearchQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(671, 585);
+            this.ClientSize = new System.Drawing.Size(671, 587);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbSurfaceMaterial);
@@ -182,9 +200,10 @@
             this.MinimizeBox = false;
             this.Name = "SearchQuotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "SearchQuotes";
+            this.Text = "Search Quotes";
             this.Load += new System.EventHandler(this.SearchQuotes_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuotes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,19 +212,19 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView lvQuotes;
-        private System.Windows.Forms.ColumnHeader customerName;
-        private System.Windows.Forms.ColumnHeader dateCreated;
-        private System.Windows.Forms.ColumnHeader surfaceArea;
-        private System.Windows.Forms.ColumnHeader sizeCost;
-        private System.Windows.Forms.ColumnHeader drawerCost;
-        private System.Windows.Forms.ColumnHeader material;
-        private System.Windows.Forms.ColumnHeader materialCost;
-        private System.Windows.Forms.ColumnHeader shippingMethod;
-        private System.Windows.Forms.ColumnHeader shippingCost;
-        private System.Windows.Forms.ColumnHeader totalCost;
         private System.Windows.Forms.ComboBox cbSurfaceMaterial;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.DataGridView dgvQuotes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnShippingDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnShippingMethod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnTotalSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnSizeCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnDrawerCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnMaterial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnMaterialCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnShippingCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnTotalCost;
     }
 }

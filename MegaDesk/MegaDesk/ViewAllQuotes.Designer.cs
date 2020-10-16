@@ -28,17 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lvQuotes = new System.Windows.Forms.ListView();
-            this.customerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dateCreated = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.surfaceArea = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sizeCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.drawerCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.material = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.shippingMethod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.shippingCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.totalCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tlpQuote = new System.Windows.Forms.TableLayoutPanel();
             this.lblShippingCost = new System.Windows.Forms.Label();
             this.lblShippingMethod = new System.Windows.Forms.Label();
@@ -94,71 +83,6 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuotes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lvQuotes
-            // 
-            this.lvQuotes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.customerName,
-            this.dateCreated,
-            this.surfaceArea,
-            this.sizeCost,
-            this.drawerCost,
-            this.material,
-            this.materialCost,
-            this.shippingMethod,
-            this.shippingCost,
-            this.totalCost});
-            this.lvQuotes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvQuotes.FullRowSelect = true;
-            this.lvQuotes.GridLines = true;
-            this.lvQuotes.HideSelection = false;
-            this.lvQuotes.Location = new System.Drawing.Point(8, 24);
-            this.lvQuotes.Name = "lvQuotes";
-            this.lvQuotes.Size = new System.Drawing.Size(561, 438);
-            this.lvQuotes.TabIndex = 0;
-            this.lvQuotes.UseCompatibleStateImageBehavior = false;
-            this.lvQuotes.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvQuotes_ColumnClick);
-            this.lvQuotes.SelectedIndexChanged += new System.EventHandler(this.lvQuotes_SelectedIndexChanged);
-            // 
-            // customerName
-            // 
-            this.customerName.Text = "Customer Name";
-            // 
-            // dateCreated
-            // 
-            this.dateCreated.Text = "Date Created";
-            // 
-            // surfaceArea
-            // 
-            this.surfaceArea.Text = "Surface Area";
-            // 
-            // sizeCost
-            // 
-            this.sizeCost.Text = "Size Cost";
-            // 
-            // drawerCost
-            // 
-            this.drawerCost.Text = "Drawer Cost";
-            // 
-            // material
-            // 
-            this.material.Text = "Material";
-            // 
-            // materialCost
-            // 
-            this.materialCost.Text = "Material Cost";
-            // 
-            // shippingMethod
-            // 
-            this.shippingMethod.Text = "Shipping Method";
-            // 
-            // shippingCost
-            // 
-            this.shippingCost.Text = "Shipping Cost";
-            // 
-            // totalCost
-            // 
-            this.totalCost.Text = "Total Cost";
             // 
             // tlpQuote
             // 
@@ -713,7 +637,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lvQuotes);
+            this.groupBox1.Controls.Add(this.dgvQuotes);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -770,9 +694,10 @@
             this.dgvColumnMaterialCost,
             this.dgvColumnShippingCost,
             this.dgvColumnTotalCost});
-            this.dgvQuotes.Location = new System.Drawing.Point(20, 515);
+            this.dgvQuotes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvQuotes.Location = new System.Drawing.Point(8, 24);
             this.dgvQuotes.Name = "dgvQuotes";
-            this.dgvQuotes.Size = new System.Drawing.Size(561, 150);
+            this.dgvQuotes.Size = new System.Drawing.Size(561, 438);
             this.dgvQuotes.TabIndex = 10;
             this.dgvQuotes.SelectionChanged += new System.EventHandler(this.dgvQuotes_SelectionChanged);
             // 
@@ -841,8 +766,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(872, 796);
-            this.Controls.Add(this.dgvQuotes);
+            this.ClientSize = new System.Drawing.Size(872, 552);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -864,18 +788,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView lvQuotes;
-        private System.Windows.Forms.ColumnHeader customerName;
-        private System.Windows.Forms.ColumnHeader dateCreated;
-        private System.Windows.Forms.ColumnHeader surfaceArea;
-        private System.Windows.Forms.ColumnHeader sizeCost;
-        private System.Windows.Forms.ColumnHeader drawerCost;
-        private System.Windows.Forms.ColumnHeader material;
-        private System.Windows.Forms.ColumnHeader materialCost;
-        private System.Windows.Forms.ColumnHeader shippingMethod;
-        private System.Windows.Forms.ColumnHeader shippingCost;
-        private System.Windows.Forms.ColumnHeader totalCost;
         private System.Windows.Forms.TableLayoutPanel tlpQuote;
         private System.Windows.Forms.Label lblShippingCost;
         private System.Windows.Forms.Label lblShippingMethod;

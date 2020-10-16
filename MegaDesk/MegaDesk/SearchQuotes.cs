@@ -1,12 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MegaDesk
@@ -28,49 +23,82 @@ namespace MegaDesk
             InitializeComponent();
         }
 
+        private void populateDataGridView(bool isFilter, string surfaceMaterial)
+        {
+            // Read data from json file.
+            string jsonPath = @"quotes.json";
+
+            if (!File.Exists(jsonPath))
+            {
+                MessageBox.Show("Information", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // Read data from json.
+                var jsonData = File.ReadAllText(jsonPath);
+                // Deserialize json and then save it to a list
+                List<DeskQuote> deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(jsonData, new JsonSerializerSettings
+                {
+                    DateFormatString = "MM/dd/YYYY HH:mm:ss"
+                });
+
+                // Populate datagrid
+                dgvQuotes.Rows.Clear();
+                dgvQuotes.Refresh();
+                foreach (DeskQuote dq in deskQuotes)
+                {
+                    string dateCreated = dq.ShippingDate.ToString();
+                    string customerName = dq.CustomerName;
+
+                    string totalSize = $"{Math.Round(dq.computeSurfaceArea(dq.Desk.Width, dq.Desk.Depth), 2)}";
+                    string sizeCost = Math.Round(dq.computeDeskSizeCost(), 2).ToString("F");
+                    string drawerCost = Math.Round(dq.computeDrawerCost(), 2).ToString("F");
+                    string material = dq.Desk.SurfaceMaterial;
+                    string materialCost = Math.Round(dq.computeSurfaceMaterialCost(), 2).ToString("F");
+                    int shippingDays = dq.Desk.RushOrderDay;
+                    string shippingMethod = "";
+                    string shippingCost = Math.Round(dq.computeShippingCost(), 2).ToString("F");
+                    string totalCost = Math.Round(dq.computeDeskPrice(), 2).ToString("F");
+
+                    if (shippingDays != 14)
+                    {
+                        shippingMethod = $"Rush - {shippingDays} days.";
+                    }
+                    else
+                    {
+                        shippingMethod = $"Normal - {shippingDays} days.";
+                    }
+
+                    string[] row = { customerName, dateCreated, shippingMethod, totalSize, sizeCost,
+                                     drawerCost, material, materialCost, shippingCost, totalCost };
+
+                    if (material == surfaceMaterial && isFilter)
+                    {
+                        dgvQuotes.Rows.Add(row);
+                    } 
+
+                    if (!isFilter)
+                    {
+                        dgvQuotes.Rows.Add(row);
+                    }
+                }
+            }
+        }
+
         private void SearchQuotes_Load(object sender, EventArgs e)
         {
             cbSurfaceMaterial.DataSource = Enum.GetValues(typeof(SurfaceMaterial));
             cbSurfaceMaterial.SelectedItem = SurfaceMaterial.Laminate;
 
-            lvQuotes.View = View.Details;
-
-            // Read content of file storage
-            string[] lines = File.ReadAllLines(@"qoutes.txt");
-            foreach (string line in lines)
-            {
-                //string[] quote = line.Split(new string[] { "," }, StringSplitOptions.None);
-                string[] quote = line.Split(',');
-                lvQuotes.Items.Add(new ListViewItem(quote));
-            }
+            // Populate datagrid with values from JSON
+            populateDataGridView(false, "");
         }
 
         private void cbSurfaceMaterial_SelectedValueChanged(object sender, EventArgs e)
         {
-            lvQuotes.Items.Clear();
-            lvQuotes.View = View.Details;
-
             string surfaceMaterial = cbSurfaceMaterial.Text;
-
-            Console.WriteLine("1");
-            Console.WriteLine(surfaceMaterial);
-            // Read content of file storage
-            string[] lines = File.ReadAllLines(@"qoutes.txt");
-            foreach (string line in lines)
-            {
-                //string[] quote = line.Split(new string[] { "," }, StringSplitOptions.None);
-                string[] quote = line.Split(',');
-
-                Console.WriteLine("2");
-                Console.WriteLine(quote[5]);
-                Console.WriteLine(surfaceMaterial.Trim(' ').Equals(quote[5].Trim(' ')));
-
-                if (surfaceMaterial.Trim(' ').Equals(quote[5].Trim(' ')))
-                {
-                    Console.WriteLine("3");
-                    lvQuotes.Items.Add(new ListViewItem(quote));
-                }
-            }
+            // Populate datagrid with values from JSON based on the value selected from the dropdown.
+            populateDataGridView(true, surfaceMaterial);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
