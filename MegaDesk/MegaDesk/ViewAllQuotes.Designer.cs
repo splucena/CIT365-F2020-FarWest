@@ -82,6 +82,13 @@
             this.dgvColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvColumnShippingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvColumnShippingMethod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnTotalSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnSizeCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnDrawerCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnMaterialCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnShippingCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColumnTotalCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpQuote.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -755,11 +762,19 @@
             this.dgvQuotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvColumnName,
             this.dgvColumnShippingDate,
-            this.dgvColumnShippingMethod});
+            this.dgvColumnShippingMethod,
+            this.dgvColumnTotalSize,
+            this.dgvColumnSizeCost,
+            this.dgvColumnDrawerCost,
+            this.dgvColumnMaterial,
+            this.dgvColumnMaterialCost,
+            this.dgvColumnShippingCost,
+            this.dgvColumnTotalCost});
             this.dgvQuotes.Location = new System.Drawing.Point(20, 515);
             this.dgvQuotes.Name = "dgvQuotes";
             this.dgvQuotes.Size = new System.Drawing.Size(561, 150);
             this.dgvQuotes.TabIndex = 10;
+            this.dgvQuotes.SelectionChanged += new System.EventHandler(this.dgvQuotes_SelectionChanged);
             // 
             // dgvColumnName
             // 
@@ -778,6 +793,48 @@
             this.dgvColumnShippingMethod.HeaderText = "Shipping Method";
             this.dgvColumnShippingMethod.Name = "dgvColumnShippingMethod";
             this.dgvColumnShippingMethod.ReadOnly = true;
+            // 
+            // dgvColumnTotalSize
+            // 
+            this.dgvColumnTotalSize.HeaderText = "Total Size";
+            this.dgvColumnTotalSize.Name = "dgvColumnTotalSize";
+            this.dgvColumnTotalSize.ReadOnly = true;
+            // 
+            // dgvColumnSizeCost
+            // 
+            this.dgvColumnSizeCost.HeaderText = "Size Cost";
+            this.dgvColumnSizeCost.Name = "dgvColumnSizeCost";
+            this.dgvColumnSizeCost.ReadOnly = true;
+            // 
+            // dgvColumnDrawerCost
+            // 
+            this.dgvColumnDrawerCost.HeaderText = "Drawer Cost";
+            this.dgvColumnDrawerCost.Name = "dgvColumnDrawerCost";
+            this.dgvColumnDrawerCost.ReadOnly = true;
+            // 
+            // dgvColumnMaterial
+            // 
+            this.dgvColumnMaterial.HeaderText = "Material";
+            this.dgvColumnMaterial.Name = "dgvColumnMaterial";
+            this.dgvColumnMaterial.ReadOnly = true;
+            // 
+            // dgvColumnMaterialCost
+            // 
+            this.dgvColumnMaterialCost.HeaderText = "Material Cost";
+            this.dgvColumnMaterialCost.Name = "dgvColumnMaterialCost";
+            this.dgvColumnMaterialCost.ReadOnly = true;
+            // 
+            // dgvColumnShippingCost
+            // 
+            this.dgvColumnShippingCost.HeaderText = "Shipping Cost";
+            this.dgvColumnShippingCost.Name = "dgvColumnShippingCost";
+            this.dgvColumnShippingCost.ReadOnly = true;
+            // 
+            // dgvColumnTotalCost
+            // 
+            this.dgvColumnTotalCost.HeaderText = "Total Cost";
+            this.dgvColumnTotalCost.Name = "dgvColumnTotalCost";
+            this.dgvColumnTotalCost.ReadOnly = true;
             // 
             // ViewAllQuotes
             // 
@@ -862,5 +919,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnShippingDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnShippingMethod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnTotalSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnSizeCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnDrawerCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnMaterial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnMaterialCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnShippingCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnTotalCost;
     }
 }

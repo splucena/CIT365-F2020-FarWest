@@ -67,8 +67,20 @@ namespace MegaDesk
                 // Populate datagrid
                 foreach(DeskQuote dq in deskQuotes)
                 {
+                    string dateCreated = dq.ShippingDate.ToString();
+                    string customerName = dq.CustomerName;
+
+                    string totalSize = $"{Math.Round(dq.computeSurfaceArea(dq.Desk.Width, dq.Desk.Depth), 2)}";
+                    string sizeCost = Math.Round(dq.computeDeskSizeCost(), 2).ToString("F");
+                    string drawerCost = Math.Round(dq.computeDrawerCost(), 2).ToString("F");
+                    string material = dq.Desk.SurfaceMaterial;
+                    string materialCost = Math.Round(dq.computeSurfaceMaterialCost(), 2).ToString("F");
+                    //string shippingMethod = _shippingMethod;
                     int shippingDays = dq.Desk.RushOrderDay;
                     string shippingMethod = "";
+                    string shippingCost = Math.Round(dq.computeShippingCost(), 2).ToString("F");
+                    string totalCost = Math.Round(dq.computeDeskPrice(), 2).ToString("F");
+                    
                     if (shippingDays != 14)
                     {
                         shippingMethod = $"Rush - {shippingDays} days.";
@@ -77,7 +89,8 @@ namespace MegaDesk
                         shippingMethod = $"Normal - {shippingDays} days.";
                     }
 
-                    string[] row = { dq.CustomerName, dq.ShippingDate.ToString(), shippingMethod };
+                    string[] row = { customerName, dateCreated, shippingMethod, totalSize, sizeCost, 
+                                     drawerCost, material, materialCost, shippingCost, totalCost };
                     dgvQuotes.Rows.Add(row);
                 }
             }
@@ -149,6 +162,39 @@ namespace MegaDesk
 
             // Perform the sort with these new sort options.
             this.lvQuotes.Sort();
+        }
+
+        private void dgvQuotes_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvQuotes.SelectedRows)
+            {
+                lblCustomerName.Text = row.Cells[0].Value.ToString();
+                // Date
+
+                // Desk details
+                lblBasePrice.Text = "200.00";
+                lblBaseSizeIncluded.Text = "1000.00";
+                lblCostPerIn.Text = "1.00";
+
+                // Surface area
+                lblTotalSizeIn.Text = row.Cells[3].Value.ToString();
+                lblSizeCost.Text = row.Cells[4].Value.ToString();
+
+                // Drawer
+                lblPricePerDrawer.Text = "50.00";
+                lblDrawerCost.Text = row.Cells[5].Value.ToString();
+
+                // Material
+                lblMaterial.Text = row.Cells[6].Value.ToString();
+                lblMaterialCost.Text = row.Cells[7].Value.ToString();
+
+                // Shipping
+                lblShippingMethod.Text = row.Cells[2].Value.ToString();
+                lblShippingCost.Text = row.Cells[8].Value.ToString();
+
+                // Total cost
+                lblTotalCost.Text = row.Cells[9].Value.ToString();
+            }
         }
     }
 }

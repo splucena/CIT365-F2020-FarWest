@@ -14,6 +14,7 @@ namespace MegaDesk
 {
     class DeskQuote
     {
+        // Make this member variable accessible during JSON de/serialization
         [JsonProperty]
         private Desk _desk;
         [JsonProperty]
