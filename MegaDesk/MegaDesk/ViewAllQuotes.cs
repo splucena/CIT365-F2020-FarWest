@@ -80,32 +80,41 @@ namespace MegaDesk
                 {
                 try
                 {
-                    lblCustomerName.Text = row.Cells[0].Value.ToString();
+                    lblCustomerName.Text = row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString();
                     // Date
 
                     // Desk details
-                    lblBasePrice.Text = "200.00";
-                    lblBaseSizeIncluded.Text = "1000.00";
-                    lblCostPerIn.Text = "1.00";
+                    if (row.Cells[0].Value != null)
+                    {
+                        lblBasePrice.Text = "200.00";
+                        lblBaseSizeIncluded.Text = "1000.00";
+                        lblCostPerIn.Text = "1.00";
+                        lblPricePerDrawer.Text = "50.00";
+                    } else
+                    {
+                        lblBasePrice.Text = "";
+                        lblBaseSizeIncluded.Text = "";
+                        lblCostPerIn.Text = "";
+                        lblPricePerDrawer.Text = "";
+                    }
 
                     // Surface area
-                    lblTotalSizeIn.Text = row.Cells[3].Value.ToString();
-                    lblSizeCost.Text = row.Cells[4].Value.ToString();
+                    lblTotalSizeIn.Text = row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString();
+                    lblSizeCost.Text = row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString();
 
                     // Drawer
-                    lblPricePerDrawer.Text = "50.00";
-                    lblDrawerCost.Text = row.Cells[5].Value.ToString();
+                    lblDrawerCost.Text = row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString();
 
                     // Material
-                    lblMaterial.Text = row.Cells[6].Value.ToString();
-                    lblMaterialCost.Text = row.Cells[7].Value.ToString();
+                    lblMaterial.Text = row.Cells[6].Value == null ? "" : row.Cells[6].Value.ToString();
+                    lblMaterialCost.Text = row.Cells[7].Value == null ? "" : row.Cells[7].Value.ToString();
 
                     // Shipping
-                    lblShippingMethod.Text = row.Cells[2].Value.ToString();
-                    lblShippingCost.Text = row.Cells[8].Value.ToString();
+                    lblShippingMethod.Text = row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString();
+                    lblShippingCost.Text = row.Cells[8].Value == null ? "" : row.Cells[8].Value.ToString();
 
                     // Total cost
-                    lblTotalCost.Text = row.Cells[9].Value.ToString();
+                    lblTotalCost.Text = row.Cells[9].Value == null ? "" : row.Cells[9].Value.ToString();
                 }
                 catch (Exception ex)
                 {
