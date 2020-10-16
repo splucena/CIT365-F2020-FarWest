@@ -109,10 +109,8 @@ namespace MegaDesk
                     _shippingMethod = $"Normal - {rushOptionDays} Days";
                 }
                 // Create DeskQuote
-                DeskQuote dq = new DeskQuote(d, Convert.ToDateTime(dtDateCreated.Value), txtName.Text);
-                dq.saveDeskQuoteJS(dq);
+                DeskQuote dq = new DeskQuote(d, Convert.ToDateTime(dtDateCreated.Value), txtName.Text);                
                 dq.saveDeskQuote(dq);
-                dq.displayDeskQuotes();
 
                 // Create and pass data to DisplayQuote form
                 
