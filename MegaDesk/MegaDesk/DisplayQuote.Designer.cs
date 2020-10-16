@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayQuote));
             this.gbDisplayQuote = new System.Windows.Forms.GroupBox();
             this.tlpQuote = new System.Windows.Forms.TableLayoutPanel();
             this.lblDate = new System.Windows.Forms.Label();
@@ -698,11 +699,12 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.gbDisplayQuote);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DisplayQuote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "DisplayQuote";
+            this.Text = "Display Quote";
             this.gbDisplayQuote.ResumeLayout(false);
             this.tlpQuote.ResumeLayout(false);
             this.tlpQuote.PerformLayout();

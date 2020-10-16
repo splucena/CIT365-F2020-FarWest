@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllQuotes));
             this.tlpQuote = new System.Windows.Forms.TableLayoutPanel();
             this.lblShippingCost = new System.Windows.Forms.Label();
             this.lblShippingMethod = new System.Windows.Forms.Label();
@@ -142,7 +143,7 @@
             this.tlpQuote.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308F));
             this.tlpQuote.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308F));
             this.tlpQuote.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308F));
-            this.tlpQuote.Size = new System.Drawing.Size(248, 438);
+            this.tlpQuote.Size = new System.Drawing.Size(327, 438);
             this.tlpQuote.TabIndex = 2;
             // 
             // lblShippingCost
@@ -154,7 +155,7 @@
             this.lblShippingCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblShippingCost.Location = new System.Drawing.Point(159, 363);
             this.lblShippingCost.Name = "lblShippingCost";
-            this.lblShippingCost.Size = new System.Drawing.Size(86, 33);
+            this.lblShippingCost.Size = new System.Drawing.Size(165, 33);
             this.lblShippingCost.TabIndex = 24;
             this.lblShippingCost.Text = "...";
             this.lblShippingCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -168,7 +169,7 @@
             this.lblShippingMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblShippingMethod.Location = new System.Drawing.Point(159, 330);
             this.lblShippingMethod.Name = "lblShippingMethod";
-            this.lblShippingMethod.Size = new System.Drawing.Size(86, 33);
+            this.lblShippingMethod.Size = new System.Drawing.Size(165, 33);
             this.lblShippingMethod.TabIndex = 24;
             this.lblShippingMethod.Text = "...";
             this.lblShippingMethod.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -182,7 +183,7 @@
             this.lblMaterialCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblMaterialCost.Location = new System.Drawing.Point(159, 297);
             this.lblMaterialCost.Name = "lblMaterialCost";
-            this.lblMaterialCost.Size = new System.Drawing.Size(86, 33);
+            this.lblMaterialCost.Size = new System.Drawing.Size(165, 33);
             this.lblMaterialCost.TabIndex = 24;
             this.lblMaterialCost.Text = "...";
             this.lblMaterialCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -196,7 +197,7 @@
             this.lblMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblMaterial.Location = new System.Drawing.Point(159, 264);
             this.lblMaterial.Name = "lblMaterial";
-            this.lblMaterial.Size = new System.Drawing.Size(86, 33);
+            this.lblMaterial.Size = new System.Drawing.Size(165, 33);
             this.lblMaterial.TabIndex = 24;
             this.lblMaterial.Text = "...";
             this.lblMaterial.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -210,7 +211,7 @@
             this.lblDrawerCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblDrawerCost.Location = new System.Drawing.Point(159, 231);
             this.lblDrawerCost.Name = "lblDrawerCost";
-            this.lblDrawerCost.Size = new System.Drawing.Size(86, 33);
+            this.lblDrawerCost.Size = new System.Drawing.Size(165, 33);
             this.lblDrawerCost.TabIndex = 24;
             this.lblDrawerCost.Text = "...";
             this.lblDrawerCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -224,7 +225,7 @@
             this.lblPricePerDrawer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblPricePerDrawer.Location = new System.Drawing.Point(159, 198);
             this.lblPricePerDrawer.Name = "lblPricePerDrawer";
-            this.lblPricePerDrawer.Size = new System.Drawing.Size(86, 33);
+            this.lblPricePerDrawer.Size = new System.Drawing.Size(165, 33);
             this.lblPricePerDrawer.TabIndex = 24;
             this.lblPricePerDrawer.Text = "...";
             this.lblPricePerDrawer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -238,7 +239,7 @@
             this.lblSizeCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblSizeCost.Location = new System.Drawing.Point(159, 165);
             this.lblSizeCost.Name = "lblSizeCost";
-            this.lblSizeCost.Size = new System.Drawing.Size(86, 33);
+            this.lblSizeCost.Size = new System.Drawing.Size(165, 33);
             this.lblSizeCost.TabIndex = 24;
             this.lblSizeCost.Text = "...";
             this.lblSizeCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -252,7 +253,7 @@
             this.lblTotalSizeIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblTotalSizeIn.Location = new System.Drawing.Point(159, 132);
             this.lblTotalSizeIn.Name = "lblTotalSizeIn";
-            this.lblTotalSizeIn.Size = new System.Drawing.Size(86, 33);
+            this.lblTotalSizeIn.Size = new System.Drawing.Size(165, 33);
             this.lblTotalSizeIn.TabIndex = 24;
             this.lblTotalSizeIn.Text = "...";
             this.lblTotalSizeIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,7 +267,7 @@
             this.lblBasePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblBasePrice.Location = new System.Drawing.Point(159, 33);
             this.lblBasePrice.Name = "lblBasePrice";
-            this.lblBasePrice.Size = new System.Drawing.Size(86, 33);
+            this.lblBasePrice.Size = new System.Drawing.Size(165, 33);
             this.lblBasePrice.TabIndex = 24;
             this.lblBasePrice.Text = "...";
             this.lblBasePrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -588,7 +589,7 @@
             this.lblCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblCustomerName.Location = new System.Drawing.Point(159, 0);
             this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(86, 33);
+            this.lblCustomerName.Size = new System.Drawing.Size(165, 33);
             this.lblCustomerName.TabIndex = 42;
             this.lblCustomerName.Text = "...";
             this.lblCustomerName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -602,7 +603,7 @@
             this.lblBaseSizeIncluded.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblBaseSizeIncluded.Location = new System.Drawing.Point(159, 66);
             this.lblBaseSizeIncluded.Name = "lblBaseSizeIncluded";
-            this.lblBaseSizeIncluded.Size = new System.Drawing.Size(86, 33);
+            this.lblBaseSizeIncluded.Size = new System.Drawing.Size(165, 33);
             this.lblBaseSizeIncluded.TabIndex = 43;
             this.lblBaseSizeIncluded.Text = "...";
             this.lblBaseSizeIncluded.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -616,7 +617,7 @@
             this.lblCostPerIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblCostPerIn.Location = new System.Drawing.Point(159, 99);
             this.lblCostPerIn.Name = "lblCostPerIn";
-            this.lblCostPerIn.Size = new System.Drawing.Size(86, 33);
+            this.lblCostPerIn.Size = new System.Drawing.Size(165, 33);
             this.lblCostPerIn.TabIndex = 44;
             this.lblCostPerIn.Text = "...";
             this.lblCostPerIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -630,7 +631,7 @@
             this.lblTotalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblTotalCost.Location = new System.Drawing.Point(159, 396);
             this.lblTotalCost.Name = "lblTotalCost";
-            this.lblTotalCost.Size = new System.Drawing.Size(86, 42);
+            this.lblTotalCost.Size = new System.Drawing.Size(165, 42);
             this.lblTotalCost.TabIndex = 45;
             this.lblTotalCost.Text = "...";
             this.lblTotalCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -654,7 +655,7 @@
             this.groupBox2.Location = new System.Drawing.Point(595, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(8);
-            this.groupBox2.Size = new System.Drawing.Size(264, 470);
+            this.groupBox2.Size = new System.Drawing.Size(343, 470);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quote Detail";
@@ -670,7 +671,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(227)))));
-            this.btnClose.Location = new System.Drawing.Point(780, 493);
+            this.btnClose.Location = new System.Drawing.Point(867, 493);
             this.btnClose.Margin = new System.Windows.Forms.Padding(8);
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(8);
@@ -766,11 +767,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(872, 552);
+            this.ClientSize = new System.Drawing.Size(950, 552);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ViewAllQuotes";
