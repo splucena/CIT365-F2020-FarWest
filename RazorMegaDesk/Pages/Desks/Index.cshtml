@@ -10,13 +10,24 @@
 <p>
     <a class="text-white bg-dark rounded-lg create-new" asp-page="Create">Create New</a>
 </p>
+<form>
+    <p>
+        <select asp-for="DeskCustomerName" asp-items="Model.CustomerName">
+            <option value="">All</option>
+        </select>
+        Name: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <div class="table-responsive">
     <table class="table">
         <thead class="thead-dark">
             <tr>
-               <th scope="col">
+                <th scope="col">
+                    <a asp-page="./Index" asp-route-sortOrder="@Model.CustomerNameSort">
                         @Html.DisplayNameFor(model => model.Desk[0].CustomerName)
-               </th>
+                    </a>
+                </th>
                <th scope="col">
                         @Html.DisplayNameFor(model => model.Desk[0].Width)
                </th>
@@ -33,7 +44,9 @@
                         @Html.DisplayNameFor(model => model.Desk[0].ProductionTime)
                </th>
                <th scope="col">
-                        @Html.DisplayNameFor(model => model.Desk[0].DateCreated)
+                   <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                       @Html.DisplayNameFor(model => model.Desk[0].DateCreated)
+                   </a>
                </th>
                <th scope="col">
                         @Html.DisplayNameFor(model => model.Desk[0].Amount)
