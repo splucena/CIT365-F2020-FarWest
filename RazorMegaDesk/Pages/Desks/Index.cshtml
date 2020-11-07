@@ -16,7 +16,7 @@
             <option value="">All</option>
         </select>
         Name: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
+        <input class="btn btn-dark" type="submit" value="Filter" />
     </p>
 </form>
 <div class="table-responsive">
@@ -24,7 +24,7 @@
         <thead class="thead-dark">
             <tr>
                 <th scope="col">
-                    <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    <a class="text-white-50 sorting" asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
                         @Html.DisplayNameFor(model => model.Desk[0].CustomerName)
                     </a>
                 </th>
@@ -44,7 +44,7 @@
                         @Html.DisplayNameFor(model => model.Desk[0].ProductionTime)
                </th>
                <th scope="col">
-                   <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                   <a class="text-white-50 sorting" asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
                        @Html.DisplayNameFor(model => model.Desk[0].DateCreated)
                    </a>
                </th>

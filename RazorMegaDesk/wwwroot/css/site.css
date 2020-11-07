@@ -78,3 +78,7 @@ a.create-new {
 a.create-new:hover {
     text-decoration: none;
 }
+
+a.sorting:hover {
+    text-decoration: none;
+}
