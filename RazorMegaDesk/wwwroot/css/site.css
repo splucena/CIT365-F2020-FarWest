@@ -118,6 +118,13 @@ h1, h2, h3, h4, h5, h6,
     color: #48361E !important;
 }
 
+.nav-item:hover {
+    color: #E85A4F !important;
+}
+.nav-link:hover {
+    color: #E85A4F !important;
+}
+
 .banner.flex {
     display: flex;
     justify-content: center;
