@@ -11,13 +11,18 @@
     <a class="text-white bg-dark rounded-lg create-new" asp-page="Create">Create New</a>
 </p>
 <form>
-    <p>
+    <div class="input-group mb-3">
         <select asp-for="DeskCustomerName" asp-items="Model.CustomerNames">
             <option value="">All</option>
         </select>
-        Name: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
-    </p>
+        <div class="input-group-prepend">
+            <span class="input-group-text">Filter by Customer Name:</span>
+        </div>
+        <input type="text" asp-for="SearchString" />
+        <div class="input-group-append">
+            <button type="submit" value="Search" class="btn btn-dark"><i class="fas fa-search"></i> Filter</button>
+        </div>
+    </div>
 </form>
 <div class="table-responsive">
     <table class="table">
