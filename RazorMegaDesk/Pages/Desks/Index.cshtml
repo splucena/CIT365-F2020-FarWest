@@ -8,83 +8,87 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a class="text-white bg-dark rounded-lg create-new" asp-page="Create">Create New</a>
 </p>
-
 <form>
     <p>
-        Customer Name: <input type="text" asp-for="SearchString" />
+        <select asp-for="DeskCustomerName" asp-items="Model.CustomerName">
+            <option value="">All</option>
+        </select>
+        Name: <input type="text" asp-for="SearchString" />
         <input type="submit" value="Filter" />
     </p>
 </form>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
-                    @Html.DisplayNameFor(model => model.Desk[0].CustomerName)
-                </a>
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Desk[0].Width)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Desk[0].Height)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Desk[0].SurfaceMaterial)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Desk[0].NumberOfDrawer)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Desk[0].ProductionTime)
-            </th>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
-                    @Html.DisplayNameFor(model => model.Desk[0].DateCreated)
-                </a>
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Desk[0].Amount)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Desk) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Width)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Height)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SurfaceMaterial.Material)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberOfDrawer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductionTime.Days)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateCreated)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Amount)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.DeskID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.DeskID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.DeskID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">
+                    <a asp-page="./Index" asp-route-sortOrder="@Model.CustomerNameSort">
+                        @Html.DisplayNameFor(model => model.Desk[0].CustomerName)
+                    </a>
+                </th>
+               <th scope="col">
+                        @Html.DisplayNameFor(model => model.Desk[0].Width)
+               </th>
+               <th scope="col">
+                        @Html.DisplayNameFor(model => model.Desk[0].Height)
+               </th>
+               <th scope="col">
+                        @Html.DisplayNameFor(model => model.Desk[0].SurfaceMaterial)
+               </th>
+               <th scope="col">
+                        @Html.DisplayNameFor(model => model.Desk[0].NumberOfDrawer)
+               </th>
+               <th scope="col">
+                        @Html.DisplayNameFor(model => model.Desk[0].ProductionTime)
+               </th>
+               <th scope="col">
+                   <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                       @Html.DisplayNameFor(model => model.Desk[0].DateCreated)
+                   </a>
+               </th>
+               <th scope="col">
+                        @Html.DisplayNameFor(model => model.Desk[0].Amount)
+               </th>
+               <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Desk)
+            {
+                <tr>
+                    <td scope="row">
+                        @Html.DisplayFor(modelItem => item.CustomerName)
+                    </td>
+                    <td >
+                        @Html.DisplayFor(modelItem => item.Width)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Height)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SurfaceMaterial.Material)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumberOfDrawer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductionTime.Days)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateCreated)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td class="d-flex">
+                        <a asp-page="./Edit" asp-route-id="@item.DeskID">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.DeskID">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.DeskID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
