@@ -94,13 +94,13 @@ a.create-new {
     padding: 10px;
 }
 
-    a.create-new:hover {
-        text-decoration: none;
-    }
+a.create-new:hover {
+    text-decoration: none;
+}
 
 body {
     background-color: #EAE7DC;
-    color: #8E8D8A;
+    color: #48361E;
     font-family: 'Quattrocento', serif;
 }
 
@@ -121,7 +121,6 @@ h1, h2, h3, h4, h5, h6,
     text-align: center;
 }
 
-<<<<<<< HEAD
 .banner-img {
     width: 100px;
     height: 100px;
@@ -143,6 +142,17 @@ h1, h2, h3, h4, h5, h6,
     border-radius: 0 !important;
 }
 
+.btn-red {
+    background-color: #E85A4F;
+    color: #FFF;
+}
+
+.btn-red:hover {
+    background-color: #E98074;
+    border: solid 1px #E85A4F;
+    color: #FFF;
+}
+
 .btn-darkbrown {
     background-color: #D8C3A5;
     border: solid 1px #48361E;
@@ -152,6 +162,16 @@ h1, h2, h3, h4, h5, h6,
 .btn-darkbrown:hover {
     background-color: #48361E;
     color: #FFF;
+}
+
+.input-group-text {
+    background-color: transparent !important;
+    border-top: solid 1px #48361E;
+    border-bottom: solid 1px #48361E;
+}
+
+.form-control {
+    border: solid 1px #48361E !important;
 }
 
 a.sorting:hover {
