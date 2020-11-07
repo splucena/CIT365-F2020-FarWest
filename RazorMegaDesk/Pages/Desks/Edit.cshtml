@@ -13,6 +13,7 @@
     <div class="col">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Desk.DeskID" />
             <div class="form-row">
                 <div class="form-group col-md">
                     <label asp-for="Desk.CustomerName" class="control-label"></label>
@@ -55,12 +56,12 @@
                 </div>
             </div>
             @*<div class="form-row">
-                <div class="form-group col-md">
-                    <label asp-for="Desk.Amount" class="control-label"></label>
-                    <input asp-for="Desk.Amount" class="form-control" />
-                    <span asp-validation-for="Desk.Amount" class="text-danger"></span>
-                </div>
-            </div>*@
+            <div class="form-group col-md">
+                <label asp-for="Desk.Amount" class="control-label"></label>
+                <input asp-for="Desk.Amount" class="form-control" />
+                <span asp-validation-for="Desk.Amount" class="text-danger"></span>
+            </div>
+        </div>*@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-darkbrown" />
             </div>
