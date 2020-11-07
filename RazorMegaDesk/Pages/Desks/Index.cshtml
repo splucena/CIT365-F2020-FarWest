@@ -8,7 +8,7 @@
 <h1>Quotations</h1>
 
 <p>
-    <a class="btn btn-red" asp-page="Create">Create New Quote</a>
+    <a class="btn btn-red" asp-page="Create"><i class="fas fa-plus"></i>&nbspCreate New Quote</a>
 </p>
 <form>
     <div class="input-group mb-3">
@@ -88,9 +88,9 @@
                         @Html.DisplayFor(modelItem => item.Amount)
                     </td>
                     <td class="d-flex">
-                        <a class="btn btn-darkbrown" asp-page="./Edit" asp-route-id="@item.DeskID">Edit</a> &nbsp;
-                        <a class="btn btn-darkbrown" asp-page="./Details" asp-route-id="@item.DeskID">Details</a> &nbsp;
-                        <a class="btn btn-darkbrown" asp-page="./Delete" asp-route-id="@item.DeskID">Delete</a>
+                        <a class="btn btn-darkbrown" asp-page="./Edit" asp-route-id="@item.DeskID"><i class="fas fa-pen"></i>&nbspEdit</a> &nbsp;
+                        <a class="btn btn-darkbrown" asp-page="./Details" asp-route-id="@item.DeskID"><i class="fas fa-eye"></i>&nbspDetails</a> &nbsp;
+                        <a class="btn btn-darkbrown" asp-page="./Delete" asp-route-id="@item.DeskID"><i class="fas fa-times-circle"></i>&nbspDelete</a>
                     </td>
                 </tr>
             }

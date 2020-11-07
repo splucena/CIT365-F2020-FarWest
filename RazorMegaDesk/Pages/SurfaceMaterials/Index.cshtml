@@ -8,7 +8,7 @@
 <h1>Surface Material</h1>
 
 <p>
-    <a class="btn btn-red" asp-page="Create">Create New Surface Material</a>
+    <a class="btn btn-red" asp-page="Create"><i class="fas fa-plus"></i>&nbspCreate New Surface Material</a>
 </p>
 <table class="table">
     <thead>
@@ -32,9 +32,9 @@
                 @Html.DisplayFor(modelItem => item.Cost)
             </td>
             <td>
-                <a class="btn btn-darkbrown" asp-page="./Edit" asp-route-id="@item.SurfaceMaterialID">Edit</a>
-                <a class="btn btn-darkbrown" asp-page="./Details" asp-route-id="@item.SurfaceMaterialID">Details</a>
-                <a class="btn btn-darkbrown" asp-page="./Delete" asp-route-id="@item.SurfaceMaterialID">Delete</a>
+                <a class="btn btn-darkbrown" asp-page="./Edit" asp-route-id="@item.SurfaceMaterialID"><i class="fas fa-pen"></i>&nbspEdit</a>
+                <a class="btn btn-darkbrown" asp-page="./Details" asp-route-id="@item.SurfaceMaterialID"><i class="fas fa-eye"></i>&nbspDetails</a>
+                <a class="btn btn-darkbrown" asp-page="./Delete" asp-route-id="@item.SurfaceMaterialID"><i class="fas fa-times-circle"></i>&nbspDelete</a>
             </td>
         </tr>
 }
