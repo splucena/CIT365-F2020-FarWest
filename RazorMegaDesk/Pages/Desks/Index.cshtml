@@ -12,13 +12,13 @@
 </p>
 <form>
     <div class="input-group mb-3">
-        <select asp-for="DeskCustomerName" asp-items="Model.CustomerNames">
+        <select asp-for="DeskCustomerName" asp-items="Model.CustomerNames" class="form-control">
             <option value="">All</option>
         </select>
         <div class="input-group-prepend">
-            <span class="input-group-text">Filter by Customer Name:</span>
+            <span class="input-group-text color-darkbrown">Filter by Customer Name:</span>
         </div>
-        <input type="text" asp-for="SearchString" />
+        <input type="text" asp-for="SearchString" class="form-control"/>
         <div class="input-group-append">
             <button type="submit" value="Search" class="btn btn-darkbrown"><i class="fas fa-search"></i> Filter</button>
         </div>
@@ -26,7 +26,7 @@
 </form>
 <div class="table-responsive">
     <table class="table">
-        <thead class="thead-dark">
+        <thead>
             <tr>
                 <th scope="col">
                     <a class="text-white-50 sorting" asp-page="./Index" asp-route-sortOrder="@Model.NameSort">

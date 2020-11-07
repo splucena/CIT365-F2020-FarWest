@@ -78,6 +78,7 @@ body {
     width: 100%;
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
+    text-align: center;
 }
 
 /*My CSS*/
@@ -98,9 +99,12 @@ a.create-new:hover {
     text-decoration: none;
 }
 
+html {
+    color: #48361E;
+}
+
 body {
     background-color: #EAE7DC;
-    color: #48361E;
     font-family: 'Quattrocento', serif;
 }
 
@@ -108,6 +112,10 @@ h1, h2, h3, h4, h5, h6,
 .header-font {
     color: #E85A4F;
     font-family: 'Oswald', sans-serif;
+}
+
+.nav-link {
+    color: #48361E !important;
 }
 
 .banner.flex {
@@ -172,6 +180,24 @@ h1, h2, h3, h4, h5, h6,
 
 .form-control {
     border: solid 1px #48361E !important;
+}
+
+.table {
+    border-collapse: collapse;
+}
+
+.table th {
+    background-color: #48361E;
+    color: #D8C3A5;
+    text-align: center;
+}
+
+.table td {
+    color: #48361E;
+}
+
+.sorting {
+    color: #FFF !important;
 }
 
 a.sorting:hover {
