@@ -12,7 +12,7 @@
 </p>
 <form>
     <p>
-        <select asp-for="DeskCustomerName" asp-items="Model.CustomerName">
+        <select asp-for="DeskCustomerName" asp-items="Model.CustomerNames">
             <option value="">All</option>
         </select>
         Name: <input type="text" asp-for="SearchString" />
@@ -24,7 +24,7 @@
         <thead class="thead-dark">
             <tr>
                 <th scope="col">
-                    <a asp-page="./Index" asp-route-sortOrder="@Model.CustomerNameSort">
+                    <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
                         @Html.DisplayNameFor(model => model.Desk[0].CustomerName)
                     </a>
                 </th>
