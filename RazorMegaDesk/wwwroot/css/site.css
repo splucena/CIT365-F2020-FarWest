@@ -121,6 +121,7 @@ h1, h2, h3, h4, h5, h6,
     text-align: center;
 }
 
+<<<<<<< HEAD
 .banner-img {
     width: 100px;
     height: 100px;
@@ -151,4 +152,8 @@ h1, h2, h3, h4, h5, h6,
 .btn-darkbrown:hover {
     background-color: #48361E;
     color: #FFF;
+}
+
+a.sorting:hover {
+    text-decoration: none;
 }
