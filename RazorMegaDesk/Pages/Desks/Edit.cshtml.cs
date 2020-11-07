@@ -38,7 +38,7 @@ namespace RazorMegaDesk.Pages.Desks
             {
                 return NotFound();
             }
-           ViewData["ProductionTimeID"] = new SelectList(_context.ProductionTime, "ProductionTimeID", "ProductionTimeID");
+           ViewData["ProductionTimeID"] = new SelectList(_context.ProductionTime, "ProductionTimeID", "Days");
            ViewData["SurfaceMaterialID"] = new SelectList(_context.SurfaceMaterial, "SurfaceMaterialID", "Material");
             return Page();
         }
