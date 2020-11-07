@@ -26,27 +26,32 @@ namespace RazorMegaDesk.Models
                 context.SurfaceMaterial.AddRange(
                     new SurfaceMaterial
                     {
-                        Material = "Laminate"
+                        Material = "Laminate",
+                        Cost = 100
                     },
 
                     new SurfaceMaterial
                     {
-                        Material = "Oak"
+                        Material = "Oak",
+                        Cost = 200
                     },
 
                     new SurfaceMaterial
                     {
-                        Material = "Rosewood"
+                        Material = "Rosewood",
+                        Cost = 300
                     },
 
                     new SurfaceMaterial
                     {
-                        Material = "Veneer"
+                        Material = "Veneer",
+                        Cost = 125
                     },
 
                     new SurfaceMaterial
                     {
-                        Material = "Pine"
+                        Material = "Pine",
+                        Cost = 50
                     }
 
                 );

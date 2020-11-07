@@ -15,6 +15,9 @@ namespace RazorMegaDesk.Models
         [Required(ErrorMessage = "A Material Description is required")]
         public string Material { get; set; }
 
+        [Required(ErrorMessage = "A Material Cost is required")]
+        public int Cost { get; set; }
+
         public IList<Desk> Desks { get; set; }
     }
 }
