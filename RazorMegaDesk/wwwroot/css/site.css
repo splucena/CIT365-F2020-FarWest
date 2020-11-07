@@ -137,3 +137,18 @@ h1, h2, h3, h4, h5, h6,
 .bg-color-brown {
     background-color: #D8C3A5;
 }
+
+.btn {
+    border-radius: 0 !important;
+}
+
+.btn-darkbrown {
+    background-color: #D8C3A5;
+    border: solid 1px #48361E;
+    color: #48361E;
+}
+
+.btn-darkbrown:hover {
+    background-color: #48361E;
+    color: #FFF;
+}

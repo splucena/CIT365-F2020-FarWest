@@ -8,7 +8,7 @@
 <h1>Index</h1>
 
 <p>
-    <a class="text-white bg-dark rounded-lg create-new" asp-page="Create">Create New</a>
+    <a class="btn btn-darkbrown" asp-page="Create">Create New</a>
 </p>
 <form>
     <div class="input-group mb-3">
@@ -20,7 +20,7 @@
         </div>
         <input type="text" asp-for="SearchString" />
         <div class="input-group-append">
-            <button type="submit" value="Search" class="btn btn-dark"><i class="fas fa-search"></i> Filter</button>
+            <button type="submit" value="Search" class="btn btn-darkbrown"><i class="fas fa-search"></i> Filter</button>
         </div>
     </div>
 </form>
@@ -88,9 +88,9 @@
                         @Html.DisplayFor(modelItem => item.Amount)
                     </td>
                     <td class="d-flex">
-                        <a asp-page="./Edit" asp-route-id="@item.DeskID">Edit</a> |
-                        <a asp-page="./Details" asp-route-id="@item.DeskID">Details</a> |
-                        <a asp-page="./Delete" asp-route-id="@item.DeskID">Delete</a>
+                        <a class="btn btn-darkbrown" asp-page="./Edit" asp-route-id="@item.DeskID">Edit</a> &nbsp;
+                        <a class="btn btn-darkbrown" asp-page="./Details" asp-route-id="@item.DeskID">Details</a> &nbsp;
+                        <a class="btn btn-darkbrown" asp-page="./Delete" asp-route-id="@item.DeskID">Delete</a>
                     </td>
                 </tr>
             }
