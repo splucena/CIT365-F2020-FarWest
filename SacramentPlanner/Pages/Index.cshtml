@@ -3,28 +3,51 @@
 @{
 	ViewData["Title"] = "Home page";
 }
-
-<div>
+<div class="text-center p-4">
 	<h1>Sacrament Meeting Planner</h1>
 </div>
 <div class="row">
-	<div>
-		<h2>Welcome to the Sacrament Meeting Planner</h2>
-	</div>
-	<div>
-		<p>
-			<a class="btn btn-default"
-			   href="/Planners/Create">
-				Make a meeting plan
-			</a>
-		</p>
-	</div>
-	<div>
-		<p>
-			<a class="btn btn-default"
-			   href="/Planners">
-				View Plans
-			</a>
-		</p>
-	</div>
+    <!--<div>
+        <h2>Welcome to the Sacrament Meeting Planner</h2>
+    </div>
+    <div>
+        <p>
+            <a class="btn btn-success"
+               href="/Planners/Create">
+                Make a meeting plan
+            </a>
+        </p>
+    </div>
+    <div>
+        <p>
+            <a class="btn btn-success"
+               href="/Planners">
+                View Plans
+            </a>
+        </p>
+    </div>-->
+    <div class="col-2"></div>
+    <div class="col-4">
+        <img class="shadow p-2 mb-5 bg-white" src="~/img/christus_statue_visitors_center.jpeg" alt="Christus" width="300" height="359" />
+    </div>
+    <div class="col-4">
+        <h2 class="pb-5 pt-5">Welcome to the Sacrament Meeting Planner</h2>
+        <div>
+            <p>
+                <a class="btn btn-primary"
+                   href="/Planners/Create">
+                    Make a meeting plan
+                </a>
+            </p>
+        </div>
+        <div>
+            <p>
+                <a class="btn btn-primary"
+                   href="/Planners">
+                    View Plans
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="col-2"></div>
 </div>

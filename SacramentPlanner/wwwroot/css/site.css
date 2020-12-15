@@ -69,3 +69,16 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* custom style */
+.btn {
+    border-radius: 0 !important;
+}
+
+.header-bg-color {
+    background-color: #182628 !important;
+}
+
+.body-bg-color {
+    background-color: #57BA98 !important;
+}

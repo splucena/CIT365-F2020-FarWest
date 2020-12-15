@@ -16,8 +16,8 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+<body class="body-bg-color">
+    <!--<nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -29,26 +29,42 @@
                 <a asp-page="/Index" class="navbar-brand">Sacrament Meeting Planner</a>
             </div>
             <div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li><a asp-page="/Index">Home</a></li>
-					<li><a asp-page="/Planners/Index">Plans</a></li>
-					<li><a asp-page="/About">About</a></li>
-					<li><a asp-page="/Contact">Contact</a></li>
-				</ul>
+                <ul class="nav navbar-nav">
+                    <li><a asp-page="/Index">Home</a></li>
+                    <li><a asp-page="/Planners/Index">Plans</a></li>
+                    <li><a asp-page="/About">About</a></li>
+                    <li><a asp-page="/Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>-->
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-light header-bg-color border-bottom box-shadow">
+        <a class="navbar-brand text-light" href="#">SMP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link text-light active" asp-page="/Index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link text-light" asp-page="/Planners/Index">Planners</a>
+                <a class="nav-item nav-link text-light" asp-page="/Speakers/Index">Speakers</a>
+                <a class="nav-item nav-link text-light" asp-page="/Songs/Index">Songs</a>
             </div>
         </div>
     </nav>
-
+    </header>
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - Sacrament Meeting Planner</p>
-        </footer>
     </div>
-
+    
+    <footer class="footer border-top">
+        <div class="container">
+            <p>&copy; 2018 - Sacrament Meeting Planner</p>
+        </div>
+    </footer>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
