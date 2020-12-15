@@ -5,10 +5,10 @@
 	ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2 class="pt-4 pb-4">Plans</h2>
 
 <p>
-	<a asp-page="Create">Create New</a>
+	<a asp-page="Create" class="btn btn-primary">Create New Plan</a>
 </p>
 <table class="table">
 	<thead>
@@ -45,9 +45,9 @@
 					@Html.DisplayFor(modelItem => item.ClosePrayer)
 				</td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.PlannerId">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.PlannerId">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.PlannerId">Delete</a>
+                    <a asp-page="./Edit" class="btn btn-primary" asp-route-id="@item.PlannerId">Edit</a>
+                    <a asp-page="./Details" class="btn btn-primary" asp-route-id="@item.PlannerId">Details</a>
+                    <a asp-page="./Delete" class="btn btn-primary" asp-route-id="@item.PlannerId">Delete</a>
 
                 </td>
 			</tr>

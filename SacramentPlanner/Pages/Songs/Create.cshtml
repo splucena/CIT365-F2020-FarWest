@@ -6,7 +6,7 @@
 	var plannerId = Request.Query["id"];
 }
 
-<h2>Create</h2>
+<h2 class="pt-4 pb-4">Create Song</h2>
 
 <h4>Song</h4>
 <hr />
@@ -58,14 +58,11 @@
 				<input type="hidden" asp-for="Song.PlannerId" value="@plannerId"/>
 			</div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-page="Index" class="btn btn-primary">Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

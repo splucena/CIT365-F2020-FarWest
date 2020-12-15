@@ -71,6 +71,15 @@ body {
 }
 
 /* custom style */
+body {
+    color: #182628 !important;
+    /*font-family: 'Fauna One', serif;*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
 .btn {
     border-radius: 0 !important;
 }
@@ -80,5 +89,14 @@ body {
 }
 
 .body-bg-color {
-    background-color: #57BA98 !important;
+    background-color: #F2F2F2 !important;
+}
+
+table th {
+    color: #F2F2F2 !important;
+    background-color: #3B945E;
+}
+
+table td {
+    background-color: #F2F2F2;
 }

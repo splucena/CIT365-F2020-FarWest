@@ -8,6 +8,11 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fauna+One&display=swap" rel="stylesheet">
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -17,27 +22,6 @@
     </environment>
 </head>
 <body class="body-bg-color">
-    <!--<nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-page="/Index" class="navbar-brand">Sacrament Meeting Planner</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Home</a></li>
-                    <li><a asp-page="/Planners/Index">Plans</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>-->
     <header>
     <nav class="navbar navbar-expand-lg navbar-light header-bg-color border-bottom box-shadow">
         <a class="navbar-brand text-light" href="#">SMP</a>
@@ -47,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link text-light active" asp-page="/Index">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link text-light" asp-page="/Planners/Index">Planners</a>
+                <a class="nav-item nav-link text-light" asp-page="/Planners/Index">Plans</a>
                 <a class="nav-item nav-link text-light" asp-page="/Speakers/Index">Speakers</a>
                 <a class="nav-item nav-link text-light" asp-page="/Songs/Index">Songs</a>
             </div>
@@ -60,8 +44,8 @@
         @RenderBody()
     </div>
     
-    <footer class="footer border-top">
-        <div class="container">
+    <footer class="border-top mt-4">
+        <div class="container pt-4">
             <p>&copy; 2018 - Sacrament Meeting Planner</p>
         </div>
     </footer>
