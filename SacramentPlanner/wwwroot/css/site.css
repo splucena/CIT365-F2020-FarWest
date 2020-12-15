@@ -73,11 +73,12 @@ body {
 /* custom style */
 body {
     color: #182628 !important;
+    font-family: 'Rubik', sans-serif;
     /*font-family: 'Fauna One', serif;*/
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Merriweather', serif;
 }
 
 .btn {
