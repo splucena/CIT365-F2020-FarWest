@@ -13,10 +13,12 @@ namespace SacramentPlanner.Models
 
         [Required]
         [StringLength(80)]
+        [Display(Name = "Name")]
         public string SpeakerName { get; set; }
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "Topic")]
         public string SpeakerTopic { get; set; }
 	}
 }
