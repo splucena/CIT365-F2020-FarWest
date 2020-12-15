@@ -12,13 +12,13 @@ namespace SacramentPlanner.Models
 		public int PlannerId { get; set; }
 
         [Required]
-        [StringLength(80)]
         [Display(Name = "Name")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z ]*$"), StringLength(80)]
         public string SpeakerName { get; set; }
 
         [Required]
-        [StringLength(50)]
         [Display(Name = "Topic")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z ]*$"), StringLength(50)]
         public string SpeakerTopic { get; set; }
 	}
 }

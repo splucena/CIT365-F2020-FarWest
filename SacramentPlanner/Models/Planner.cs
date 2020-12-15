@@ -10,15 +10,19 @@ namespace SacramentPlanner.Models
 	{
 		public int PlannerId { get; set; }
 
+		[RegularExpression(@"^[A-Z]+[a-zA-Z ]*$")]
 		[Display(Name = "Meeting Date")]
 		public DateTime MeetingDate { get; set; }
 
+		[RegularExpression(@"^[A-Z]+[a-zA-Z ]*$")]
 		[Display(Name = "Conducting")]
 		public int BishopricId { get; set; }
 
+		[RegularExpression(@"^[A-Z]+[a-zA-Z ]*$")]
 		[Display(Name = "Opening Prayer")]
 		public string OpenPrayer { get; set; }
 
+		[RegularExpression(@"^[A-Z]+[a-zA-Z ]*$")]
 		[Display(Name = "Closing Prayer")]
 		public string ClosePrayer { get; set; }
 
